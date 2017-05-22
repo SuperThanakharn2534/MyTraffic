@@ -1,5 +1,6 @@
 package app.alignsolution.mytraffic;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(myAdapter);listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                //ทำการ get ค่าส่งไปหาหน้า DetailActivity
+                Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+                intent.putExtra("Title",titleStrings[position]);
+                intent.putExtra("Detail",DetailStrings[position]);
+                intent.putExtra("Image",ints[position]);
+                startActivity(intent);
             }
         });
-
-
     }
 
     private void getVuelueMyData() {
