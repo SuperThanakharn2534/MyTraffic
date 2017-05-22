@@ -64,7 +64,7 @@ public class MyAdapter extends BaseAdapter{
         //Show View เอาวิวไปแสดงในตัวจำรอง
         titleTextView.setText(titleStrings[position]);
        // function  ตัดคำในสั้นเพื่อเเสดงให้สวย
-        String strShortDetail = DetailStrings[position].substring(0,35) +"...";
+        String strShortDetail = DetailStrings[position].substring(0,18) +"...";
         DetailTextView.setText(strShortDetail);
         imageView.setImageResource(ints[position]);
         return view;
